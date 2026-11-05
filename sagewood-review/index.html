@@ -18,12 +18,13 @@
   --sg-blue-mid:#5ca0f8;--sg-cyan:#2dd4bf;--sg-warm:#f6c85f;--sg-focus:#93c5fd;
   --grad-start:#2563FF;--grad-end:#5CA0F8;
   --line:rgba(148,163,184,.18);--card:rgba(9,23,43,.72);
+  --paper:#ffffff;--ink:#1c2430;--ink-soft:#3e4a59;--quiet:#5c6b7c;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--sg-ink);color:var(--sg-text);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.15;color:#fff}
-a{color:var(--sg-blue-mid)}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.15;color:var(--ink)}
+a{color:#1d4ed8}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 .banner{background:linear-gradient(90deg,#7c2d12,#92400e);color:#fff7ed;font:600 13px/1.4 Montserrat,Inter,sans-serif;letter-spacing:.04em;text-align:center;padding:10px 16px}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -35,51 +36,42 @@ a{color:var(--sg-blue-mid)}
 .nav a{font:500 13px Montserrat,sans-serif;color:var(--sg-text-soft);text-decoration:none;letter-spacing:.02em}
 .nav a:hover{color:#fff}
 .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--grad-start),var(--grad-end));width:0;z-index:40}
-.hero{position:relative;overflow:hidden;padding:88px 0 72px;background:radial-gradient(900px 420px at 15% -10%,#122848 0%,var(--sg-ink) 55%)}
-.hero::before{content:"";position:absolute;width:420px;height:420px;right:-80px;top:-60px;border-radius:50%;background:var(--sg-blue);filter:blur(90px);opacity:.22;pointer-events:none}
-.eyebrow{display:inline-block;font:700 12px/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--sg-blue-mid);margin-bottom:18px}
+.hero{padding:72px 0 28px}
+.eyebrow{display:inline-block;font:700 12px/1 Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#1e40af;margin-bottom:18px}
 .hero h1{font-size:clamp(36px,5.6vw,58px);max-width:820px;margin-bottom:18px}
 .hero h1 .grad{background:linear-gradient(90deg,var(--grad-start),var(--grad-end));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--sg-text-soft);max-width:720px;margin-bottom:28px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.chip{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;color:var(--sg-text-soft)}
-.chip b{color:var(--sg-warm)}
-.meta{font-size:14px;color:var(--sg-muted)}
-section{padding:72px 0;border-top:1px solid var(--line)}
-.label{display:inline-flex;align-items:center;gap:8px;font:700 12px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sg-blue-mid);margin-bottom:12px}
-.label .n{background:rgba(79,140,255,.15);color:var(--sg-blue);border-radius:6px;padding:3px 8px}
-h2.big{font-size:clamp(28px,3.8vw,42px);margin-bottom:12px}
-.sub{color:var(--sg-muted);font-size:18px;max-width:700px;margin-bottom:32px}
-p+p{margin-top:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}.nav{display:none}}
-.card h3{font-size:22px;margin-bottom:8px}
-.card p,.card li{color:var(--sg-text-soft);font-size:15.5px}
-.card ul,.step ul,td ul{margin:10px 0 0 18px;display:grid;gap:6px}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
-table{width:100%;border-collapse:collapse;font-size:14.5px}
-th,td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-th{background:rgba(37,99,255,.18);color:#fff;font:600 13px Montserrat,sans-serif;letter-spacing:.03em}
-td{color:var(--sg-text-soft)}
-tr:last-child td{border-bottom:0}
-td:first-child{color:#fff;font-weight:600;width:28%}
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px}
-@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}}
-.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-.step .n{font:700 12px Montserrat,sans-serif;color:var(--sg-cyan);letter-spacing:.08em;margin-bottom:8px}
-.step p{font-size:14px;color:var(--sg-text-soft)}
-.qlist{list-style:none;display:grid;gap:10px}
-.qlist li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--sg-text-soft)}
-.note{font-size:14px;color:var(--sg-muted);margin-top:18px}
-.footer{padding:40px 0 64px;border-top:1px solid var(--line);color:var(--sg-muted);font-size:14px}
-.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
-.footer strong{color:var(--sg-text-soft)}
-.toc{position:fixed;right:18px;bottom:18px;z-index:25;background:rgba(9,23,43,.92);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:500 12px Montserrat,sans-serif;color:var(--sg-text-soft);display:flex;flex-direction:column;gap:6px;max-width:160px}
-.toc a{color:var(--sg-text-soft);text-decoration:none}
-.toc a:hover{color:var(--sg-blue-mid)}
-@media(max-width:1100px){.toc{display:none}}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--ink-soft);max-width:680px}
+.measures{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:32px}
+.measures span{font:600 13px/1.3 Montserrat,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#1e3a8a}
+section{padding:48px 0 12px}
+.prose{max-width:680px}
+.prose p+p{margin-top:14px}
+h2.big{font-size:clamp(32px,4vw,46px);margin-bottom:18px}
+h3{font-size:28px;margin:28px 0 10px}
+.prose h3:first-of-type{margin-top:8px}
+p{color:var(--ink-soft)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.kpi article{background:#f4f6f8;border-radius:18px;padding:28px 24px 26px}
+.kpi h3{font-size:30px;margin:0 0 12px;color:var(--ink)}
+.kpi p{margin:0;color:var(--ink-soft)}
+.road{margin-top:12px;max-width:760px}
+.road-step{display:grid;grid-template-columns:56px 1fr;gap:6px 18px;position:relative;padding-bottom:32px}
+.road-step:last-child{padding-bottom:0}
+.road-step::before{content:"";position:absolute;left:19px;top:44px;bottom:0;width:2px;background:#e7ebf0}
+.road-step:last-child::before{display:none}
+.mark{width:40px;height:40px;border-radius:50%;background:#07111f;color:#fff;display:flex;align-items:center;justify-content:center;font:600 15px Montserrat,sans-serif;position:relative;z-index:1}
+.road-step h3{margin:6px 0 8px;font-size:28px}
+.road-step p{max-width:620px}
+.asks p{font-size:18px;color:var(--ink);margin:0 0 16px}
+.note{font-size:15px;color:var(--quiet);margin-top:8px;max-width:680px}
+.footer{padding:48px 0 72px;color:var(--quiet);font-size:14px}
+.footer strong{color:var(--ink-soft)}
+@media(max-width:820px){
+  .nav{display:none}
+  .kpi{grid-template-columns:1fr}
+  .hero{padding-top:48px}
+  .road-step h3{font-size:24px}
+}
 </style>
 </head>
 <body>
@@ -99,243 +91,145 @@ td:first-child{color:#fff;font-weight:600;width:28%}
 </header>
 
 <main id="top">
-  <section class="hero" style="border:0;padding-top:88px">
+  <section class="hero">
     <div class="wrap">
       <div class="eyebrow">Sagewood and Sentience Growth. Nov 5, 2026.</div>
       <h1>How we approach <span class="grad">owner outreach</span> for your two plans</h1>
-      <p class="lead">Ben, you asked how we handle two markets. You want to know where the best chance is. You want to know what we measure. We start with the Instantly setup you run. We keep what works. We test one pilot after the audit.</p>
+      <p class="lead">Ben, you asked how we handle two markets and where to put the effort and what we measure. This is the proposal.</p>
+      <div class="measures" aria-label="What we measure">
+        <span>Accepted owner opportunities</span>
+        <span>Attended qualified calls</span>
+        <span>All-in cost per accepted opportunity</span>
+      </div>
     </div>
   </section>
 
   <section id="heard">
-    <div class="wrap">
-      <div class="label"><span class="n">01</span> Context</div>
+    <div class="wrap prose">
       <h2 class="big">What we heard</h2>
-      <p class="sub">You told us this.</p>
-      <div class="grid2">
-        <div class="card">
-          <h3>Nationwide sell-side</h3>
-          <p>Your work across the country has two sectors.</p>
-          <ul>
-            <li>Outdoors and Recreation</li>
-            <li>Manufacturing, Industrial and Specialty Trades</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Colorado Main Street</h3>
-          <p>You build a Colorado Main Street brokerage separate from that national work. It serves smaller firms the owner runs. The industry set is wider than the national work.</p>
-        </div>
-        <div class="card">
-          <h3>What you use</h3>
-          <p>You use Instantly. You can pass us other parts of outbound in 2027 if the math supports it.</p>
-        </div>
-        <div class="card">
-          <h3>What matters to you</h3>
-          <p>You want results. A new list is not the goal.</p>
-        </div>
-      </div>
+      <h3>Nationwide sell-side</h3>
+      <p>Your work across the country has two sectors. One is Outdoors and Recreation. The other is Manufacturing, Industrial and Specialty Trades.</p>
+      <h3>Colorado Main Street</h3>
+      <p>You are building a separate brokerage for smaller firms the owner runs. The industry set is wider than the national pair. This is its own initiative.</p>
+      <h3>What you use</h3>
+      <p>You use Instantly. You can pass us other parts of outbound in 2027 if the math supports it. Results matter to you. A fresh list on its own does not.</p>
     </div>
   </section>
 
   <section id="work">
-    <div class="wrap">
-      <div class="label"><span class="n">02</span> Approach</div>
+    <div class="wrap prose">
       <h2 class="big">How we work</h2>
-      <p class="sub">We keep what works and we run one pilot. We add to it if the pilot supports that.</p>
-      <div class="card" style="margin-bottom:18px">
-        <p>We go through your Instantly setup with you. We look at these items.</p>
-        <ul>
-          <li>Niche</li>
-          <li>Offer</li>
-          <li>Copy</li>
-          <li>List source</li>
-          <li>Send volume</li>
-          <li>Replies</li>
-          <li>How you decide who fits</li>
-          <li>Meetings you book</li>
-          <li>Meetings the owner attends</li>
-          <li>Owner opportunities you accept</li>
-          <li>All-in spend</li>
-        </ul>
-        <p>We leave a campaign that works as it is. We change a step that fails.</p>
-        <p>If you want help on the new Colorado Main Street build, we run one pilot there. We do not rebuild the national work while this pilot runs. We try Colorado for the new division. This is an idea, not a claim that Colorado is easier or better. We add niches or places if the pilot supports that.</p>
-      </div>
-      <div class="card">
-        <h3>What the email says</h3>
-        <p>The cold email invites the owner to a first Sagewood talk on goals and a possible sale. We check whether brokerage or advice fits.</p>
-        <p>You confirm the offer before we send it.</p>
-        <p>We do not put these in the email.</p>
-        <ul>
-          <li>A value for the business</li>
-          <li>A named buyer</li>
-          <li>A claim that the owner is ready to sell</li>
-        </ul>
-        <p>We record sale timing and any current representation as stated.</p>
-        <p>Attendance counts when an owner who meets your rules joins.</p>
-        <p>We label estimates and owner-reported numbers with their source.</p>
-      </div>
+      <p>We start in the Instantly account you run. You and I go through the live motion from niche and offer into copy and name source and volume and replies and fit. Attended meetings belong in that pass. So do accepted owner opportunities and the all-in spend.</p>
+      <p>A campaign that produces good conversations stays in place. We change a step that fails. We do not rebuild national sell-side and Colorado Main Street in one pilot.</p>
+      <p>You pick the pilot. It can be Colorado Main Street or the national sell-side.</p>
+      <p>A Main Street start is an idea for the new division. It is not a claim that Colorado is easier or better. More niches or places wait until this pilot supports them. How many owner talks we book depends on what your team can take.</p>
+      <p>The cold email invites the owner to a first Sagewood talk on goals and a possible sale. We check whether brokerage or advice fits. You confirm the offer before we send it.</p>
+      <p>That note does not state a business value or name a buyer or claim a readiness to sell. We record sale timing and any current representation as stated. We label estimates and owner-reported numbers with their source.</p>
     </div>
   </section>
 
   <section id="table">
     <div class="wrap">
-      <div class="label"><span class="n">03</span> Plan</div>
-      <h2 class="big">What we do</h2>
-      <p class="sub">Four actions. One set of numbers to judge them.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>What we do</th><th>Why</th><th>What we need from you</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Go through current outbound before we change it.</td>
-              <td>We do not break what works. A fix stays narrow.</td>
-              <td>Send a walkthrough or an export with these items.
-                <ul>
-                  <li>Niches</li>
-                  <li>Copy</li>
-                  <li>Lists</li>
-                  <li>Sends</li>
-                  <li>Replies</li>
-                  <li>Meetings</li>
-                  <li>Owner opportunities you accept</li>
-                  <li>Spend</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Run one pilot. If you want the new Colorado Main Street work as the start, that is the pilot.</td>
-              <td>We learn what an accepted opportunity costs. We do not split effort across several markets.</td>
-              <td>Tell us which plan you want as the start. Tell us how many owner talks your team can take.</td>
-            </tr>
-            <tr>
-              <td>Write what you take and what you skip. Use lists of owners we check.
-                <ul>
-                  <li>Places</li>
-                  <li>Industries</li>
-                  <li>Company sizes</li>
-                </ul>
-              </td>
-              <td>The pilot stays on one path. Each owner gets the same rules.</td>
-              <td>Give us Main Street takes and skips by industry and size.</td>
-            </tr>
-            <tr>
-              <td>
-                <p>Track owner opportunities you accept.</p>
-                <p>Track calls the owner joins and the all-in cost per accepted opportunity.</p>
-              </td>
-              <td>Sends and raw replies show what happens. We do not treat them as the result.</td>
-              <td>
-                <p>Tell us who on your team accepts an owner opportunity.</p>
-                <p>Tell us your limit for all-in cost per accepted opportunity.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="prose">
+        <h2 class="big">What we do</h2>
+        <p>We stand beside the outbound you built. We read it with you before we change it and we keep the part that works. The new effort is one pilot with boundaries you set for place and industry and size. Lists are owners we have checked. People you email or know or asked us to skip stay off that list.</p>
+        <p>Signed work and fees are a separate conversation. They are not an owner opportunity you accept. Email volume does not promise a signature or a fee.</p>
+        <p>The path below is the work itself. It runs from the audit to the score.</p>
       </div>
-
-      <h3 style="margin:36px 0 14px;font-size:26px">How the work runs</h3>
-      <div class="flow">
-        <div class="step"><div class="n">1. Audit</div><p>We set the offer and who does not fit after we see how Instantly performs.</p></div>
-        <div class="step"><div class="n">2. List</div>
-          <p>We build a focused owner list and we check it. We remove these people.</p>
-          <ul>
-            <li>People you email</li>
-            <li>People you know</li>
-            <li>People you told us to skip</li>
-          </ul>
-        </div>
-        <div class="step"><div class="n">3. Ramp</div>
-          <p>We raise the send count in steps. The plan cap is one thousand emails a day. That count includes the next emails in the thread. This number is a plan, not a promise. The cap depends on three things.</p>
-          <ul>
-            <li>The sending setup</li>
-            <li>Whether mail lands</li>
-            <li>How many owners fit</li>
-          </ul>
-        </div>
-        <div class="step"><div class="n">4. Qualify</div><p>We use a checked owner contact when we have one, and we use the fit rules you write. We need a clear yes from the owner.</p></div>
-        <div class="step"><div class="n">5. Score</div><p>You say yes or no on each owner opportunity.</p>
-          <p>We track attended calls and the all-in cost per accepted opportunity.</p>
-          <p>We report the spend beside a zero count and do not invent a unit cost.</p></div>
+      <div class="road" aria-label="Work process">
+        <article class="road-step">
+          <div class="mark">1</div>
+          <div>
+            <h3>Audit</h3>
+            <p>We set the offer and who does not fit after we see how Instantly performs. We do not change a live campaign before that review.</p>
+          </div>
+        </article>
+        <article class="road-step">
+          <div class="mark">2</div>
+          <div>
+            <h3>List</h3>
+            <p>We build a focused owner list and we check it. Anyone you email or know or asked us to skip comes off.</p>
+          </div>
+        </article>
+        <article class="road-step">
+          <div class="mark">3</div>
+          <div>
+            <h3>Ramp</h3>
+            <p>We raise sends in steps. The planning ceiling is up to 1000 total emails a day, with follow-ups and existing outbound inside that number. Capacity sets the pace. This is not a commitment.</p>
+          </div>
+        </article>
+        <article class="road-step">
+          <div class="mark">4</div>
+          <div>
+            <h3>Qualify</h3>
+            <p>When we have a checked owner contact we use it, along with the fit rules you write. A clear yes is required before a meeting goes on your calendar.</p>
+          </div>
+        </article>
+        <article class="road-step">
+          <div class="mark">5</div>
+          <div>
+            <h3>Score</h3>
+            <p>You say yes or no on each owner opportunity. We record attended qualified calls and all-in cost against that count.</p>
+          </div>
+        </article>
       </div>
-      <p class="note">We review signed work and fees with the numbers. Extra email promises neither.</p>
     </div>
   </section>
 
   <section id="measure">
     <div class="wrap">
-      <div class="label"><span class="n">04</span> Numbers</div>
-      <h2 class="big">What we measure</h2>
-      <p class="sub">An owner opportunity you accept has documented fit and interest.</p>
-      <div class="grid3">
-        <div class="card"><h3>Primary</h3>
-          <ul>
-            <li>Owner opportunities you accept</li>
-            <li>Calls the owner joins</li>
-            <li>All-in cost per accepted opportunity, with labor included</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Other counts</h3>
-          <ul>
-            <li>Sends</li>
-            <li>Kinds of replies</li>
-            <li>Meetings you book</li>
-            <li>Meetings the owner attends</li>
-          </ul>
-        </div>
-        <div class="card"><h3>Your numbers</h3>
-          <p>We read a recent run of your outreach. We use these figures.</p>
-          <ul>
-            <li>Owner opportunities you accept</li>
-            <li>Calls the owner attends</li>
-            <li>Work you sign</li>
-            <li>Fees you collect</li>
-            <li>All-in cost with labor</li>
-            <li>What fees add after cost</li>
-            <li>How long pay takes</li>
-            <li>The all-in cost limit per accepted opportunity</li>
-          </ul>
-          <p>If you hand us the work, we use your numbers.</p>
-        </div>
+      <div class="prose">
+        <h2 class="big">What we measure</h2>
+        <p>We do not have a verified baseline for your campaigns. This page sets no target for opportunities or calls or cost.</p>
+        <p>An owner opportunity you accept has documented fit and interest. Signed work and a fee are separate outcomes. They are not this count.</p>
       </div>
+      <div class="kpi">
+        <article>
+          <h3>Accepted owner opportunities</h3>
+          <p>You accept or decline each one. Fit and interest are written down. That is the count we track.</p>
+        </article>
+        <article>
+          <h3>Attended qualified calls</h3>
+          <p>A call counts when an owner who meets your rules joins. A booking that nobody attends does not count.</p>
+        </article>
+        <article>
+          <h3>All-in cost per accepted opportunity</h3>
+          <p>Labor is part of the number. If none are accepted, we report the spend beside zero and we do not invent a unit cost.</p>
+        </article>
+      </div>
+      <p class="note">If you hand us more outbound, that decision uses a recent account read of opportunities you accept and calls attended and signed work and fees collected.</p>
+      <p class="note">That read includes all-in cost with labor and the time to collect and the limit per accepted opportunity.</p>
+      <p class="note">It includes what fees add after cost.</p>
     </div>
   </section>
 
   <section id="questions">
     <div class="wrap">
-      <div class="label"><span class="n">05</span> Next</div>
-      <h2 class="big">A few questions</h2>
-      <ul class="qlist">
-        <li>What works in Instantly?</li>
-        <li>How do you build lists?</li>
-        <li>How many emails go out per day?</li>
-        <li>What is the outbound spend per month?</li>
-        <li>What offer should the owner see in the first email?</li>
-        <li>What deal sizes and fees do you want for national advice?</li>
-        <li>What deal sizes and fees do you want for Colorado Main Street?</li>
-        <li>Which plan is the start, and how many owner talks can your team take?</li>
-      </ul>
-      <p class="note" style="margin-top:24px">We change this after we see your Instantly numbers.</p>
+      <div class="prose">
+        <h2 class="big">A few questions</h2>
+        <div class="asks">
+          <p>What works in Instantly?</p>
+          <p>How do you build lists?</p>
+          <p>How many emails go out per day?</p>
+          <p>What is the outbound spend per month?</p>
+          <p>What offer should the owner see in the first email?</p>
+          <p>What deal sizes and fees do you want for national advice?</p>
+          <p>What deal sizes and fees do you want for Colorado Main Street?</p>
+          <p>Which plan is the start, and how many owner talks can your team take?</p>
+        </div>
+        <p class="note">We adjust the pilot after we see the Instantly account.</p>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="wrap">
-    <div>
-      <strong>Sentience Growth</strong><br>
-      shubhamg@sentiencegrowth.com<br>
-      sentiencegrowth.com
-    </div>
+    <strong>Sentience Growth</strong><br>
+    shubhamg@sentiencegrowth.com<br>
+    sentiencegrowth.com
   </div>
 </footer>
-
-<nav class="toc" aria-label="Sections">
-  <a href="#heard">Heard</a>
-  <a href="#work">Work</a>
-  <a href="#table">Plan</a>
-  <a href="#measure">Measure</a>
-  <a href="#questions">Questions</a>
-</nav>
 <script>
 (function(){
   var p=document.getElementById('progress');
